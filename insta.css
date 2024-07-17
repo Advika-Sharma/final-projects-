@@ -1,0 +1,167 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.container{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding:20px;
+    
+    
+    
+}
+.left{
+    width:300px;
+    height:650px;
+
+    
+    margin-top: 30px;
+    margin-right:100px;
+}
+.right{
+    width:300px;
+    height:600px;
+    margin:0px 20px;
+
+    text-align: center;
+    padding:5px;
+    
+
+}
+h1{
+    font-family:lobster two;
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: black;
+}
+input{
+    width:90%;
+    margin:5px;
+    height:35px;
+    border-radius: 3px;
+    border:1px solid grey;
+    padding-left:5px;
+    font-size: 12px;
+    background-color: rgb(238, 240, 243);
+}
+button{
+    margin: 20px;
+    width:90%;
+    background-color:rgb(76,181,249);
+    border-radius: 10px ;
+    border:2px;
+    height:40px;
+   font-size: 15px; 
+   color: white;
+   font-weight: bold;
+}
+.upper{
+    height:65%;
+    box-shadow: 0px 0px 2px grey;
+    padding: 20px;
+    margin-bottom:10px;
+}
+.lower{
+    height:10%;
+    box-shadow: 0px 0px 2px grey;
+    padding:20px;
+    font-weight: lighter;
+    font-size: smaller;
+    
+}
+#or { 
+    display: flex; 
+    flex-direction: row; 
+    color:grey;
+    font-size: 11px;
+   padding-bottom: 0%;
+} 
+  
+#or:before, 
+#or:after { 
+    content: ""; 
+    flex: 1 1; 
+    border-bottom: 1px solid grey; 
+    margin: auto; 
+    
+} 
+.lower2{
+    padding: 10px;
+    line-height: 40px;
+    font-weight:lighter;
+    font-size: smaller;
+    
+}
+.image{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid black; */
+    width:100%;
+    
+}
+.i1{
+    width:150px;
+     margin-right:10px; 
+    /* border: 2px solid black; */
+
+    
+}
+.i2{
+    width: 130px;
+     
+    border-radius: 5px;
+    /* border: 2px solid black; */
+   
+   
+}
+.mainimg{
+    width:500px;
+    height:700px ;
+    
+}
+.nav{
+    text-align: center;
+    width:70%;
+    margin: auto;
+    
+}
+.ni{
+    text-decoration: none;
+    color: grey;
+    margin:0px 5px;
+    font-size: 13px;
+    font-weight: lpx;
+}
+.ni:hover{
+    text-decoration: underline;
+    
+}
+.footer{
+    text-align: center;
+    color:grey;
+    padding:10px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+select{
+    border:0px;
+    color: grey;
+    font-size: 13px;
+
+}
+@media (max-width:600px) {
+    .left{
+            display: none;
+        }
+    .right{
+            width: 50%;
+        }
+}

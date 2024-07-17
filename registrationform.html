@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        .register-form{
+
+            width: 35%;
+            margin:auto;
+            padding: 10px;
+            box-shadow: 0px 0px 8px rgb(191, 188, 188);
+            margin-top: 50px;
+            border-radius: 8px;
+            min-width: 400px;
+            max-width: 800px;
+        }
+
+        h1{
+            text-align: center;
+            border-bottom: 1px solid gray;
+            padding: 10px;
+            color: green;
+        }
+
+        input{
+
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0px;
+        }
+
+        #btn{
+
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        form{
+
+            margin: 10px 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-form">
+        
+        <h1>Signup <icon><i class="fa-solid fa-magnifying-glass"></i></icon> </h1>
+        <form action="">
+            <div class="username">
+                <label for="">Username:</label>
+                <input type="text" placeholder="Enter your username">
+            </div>
+            <div class="email">
+                <label for="">Email:</label>
+                <input type="email" placeholder="Enter your email">
+            </div>
+            <div class="mobile">
+                <label for="">Moblie:</label>
+                <input type="number" placeholder="Enter your mobile no">
+            </div>
+            <div class="password">
+                <label for="">Password:</label>
+                <input type="password"  placeholder="Enter your password">
+            </div>
+            <div class="button">
+                <input type="submit" id="btn">
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
