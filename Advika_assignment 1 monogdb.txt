@@ -1,0 +1,3770 @@
+assignment 
+
+How many documents are there in the collection?
+db.users.count()
+DeprecationWarning: Collection.count() is deprecated. Use countDocuments or estimatedDocumentCount.
+21
+
+Retrieve all documents where the role is "admin"
+db.users.find({role:"admin"})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479d'),
+    id: '4',
+    username: 'Sumanth Rao',
+    useremail: 'sumanth.rao@gmail.com',
+    password: 'Sumanth123',
+    firstName: 'Sumanth',
+    lastName: 'Rao',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Mumbai',
+    salary: 700000,
+    skills: [ 'Java', 'JavaScript' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a9'),
+    id: '16',
+    username: 'Vishal Singh',
+    useremail: 'vishal.singh@regexsoftware.com',
+    password: 'Vishal123',
+    firstName: 'Vishal',
+    lastName: 'Singh',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Jaipur',
+    salary: 750000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a0'),
+    id: '7',
+    username: 'Riya Sharma',
+    useremail: 'riya.sharma@gmail.com',
+    password: 'Riya123',
+    firstName: 'Riya',
+    lastName: 'Sharma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'Python', 'JavaScript', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a6'),
+    id: '13',
+    username: 'Rahul Verma',
+    useremail: 'rahul.verma@yahoo.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'New Delhi',
+    salary: 700000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a3'),
+    id: '10',
+    username: 'Priya Gupta',
+    useremail: 'priya.gupta@regexsoftware.com',
+    password: 'Priya123',
+    firstName: 'Priya',
+    lastName: 'Gupta',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 1800000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e4799'),
+    id: '1',
+    username: 'Prajjal Dhar',
+    useremail: 'prajjal.dhar@gmail.com',
+    password: 'Regex1234',
+    firstName: 'Prajjal',
+    lastName: 'Dhar',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 300000,
+    skills: [ 'Java', 'Python' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ac'),
+    id: '19',
+    username: 'Kritika Verma',
+    useremail: 'kritika.verma@regexsoftware.com',
+    password: 'Kritika123',
+    firstName: 'Kritika',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Kolkata',
+    salary: 2500000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+Find all documents where the role is "customer" and the username contains "Karamchandani"
+db.users.find({role:"customer", username:/Karamchandani/})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479c'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 500000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ],
+    role: 'customer'
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479b'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Mumbai',
+    salary: 800000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479a'),
+    id: '2',
+    username: 'Shakshi Karamchandani',
+    useremail: 'shakshi.karamchandani@yahoo.com',
+    password: 'shakshi123',
+    firstName: 'shakshi',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 32,
+    city: 'New Delhi',
+    salary: 500000,
+    skills: [ 'Python', 'C++', 'Java', 'Os' ]
+  }
+]
+
+
+
+Retrieve the document with the username "Sumanth Rao"
+db.users.find({username:"Sumanth Rao"})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479d'),
+    id: '4',
+    username: 'Sumanth Rao',
+    useremail: 'sumanth.rao@gmail.com',
+    password: 'Sumanth123',
+    firstName: 'Sumanth',
+    lastName: 'Rao',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Mumbai',
+    salary: 700000,
+    skills: [ 'Java', 'JavaScript' ]
+  }
+]
+
+
+Find all documents where the user's first name starts with "R"
+ db.users.find({firstName:/^R/})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a2'),
+    id: '9',
+    username: 'Rajesh Patel',
+    useremail: 'rajesh.patel@gmail.com',
+    password: 'Rajesh123',
+    firstName: 'Rajesh',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 1200000,
+    skills: [ 'Python', 'C++', 'Django', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a8'),
+    id: '15',
+    username: 'Rahul Kumar',
+    useremail: 'rahul.kumar@gmail.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Kumar',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 900000,
+    skills: [ 'Python', 'Django', 'Flask', 'SQLAlchemy' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a0'),
+    id: '7',
+    username: 'Riya Sharma',
+    useremail: 'riya.sharma@gmail.com',
+    password: 'Riya123',
+    firstName: 'Riya',
+    lastName: 'Sharma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'Python', 'JavaScript', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a6'),
+    id: '13',
+    username: 'Rahul Verma',
+    useremail: 'rahul.verma@yahoo.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'New Delhi',
+    salary: 700000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+Retrieve all documents where the user has the skill "Python"
+db.users.find({skills:"Python"})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a2'),
+    id: '9',
+    username: 'Rajesh Patel',
+    useremail: 'rajesh.patel@gmail.com',
+    password: 'Rajesh123',
+    firstName: 'Rajesh',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 1200000,
+    skills: [ 'Python', 'C++', 'Django', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a8'),
+    id: '15',
+    username: 'Rahul Kumar',
+    useremail: 'rahul.kumar@gmail.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Kumar',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 900000,
+    skills: [ 'Python', 'Django', 'Flask', 'SQLAlchemy' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479e'),
+    id: '5',
+    username: 'Ananya Singh',
+    useremail: 'ananya.singh@yahoo.com',
+    password: 'Ananya123',
+    firstName: 'Ananya',
+    lastName: 'Singh',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 600000,
+    skills: [ 'Python', 'C++', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a0'),
+    id: '7',
+    username: 'Riya Sharma',
+    useremail: 'riya.sharma@gmail.com',
+    password: 'Riya123',
+    firstName: 'Riya',
+    lastName: 'Sharma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'Python', 'JavaScript', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479a'),
+    id: '2',
+    username: 'Shakshi Karamchandani',
+    useremail: 'shakshi.karamchandani@yahoo.com',
+    password: 'shakshi123',
+    firstName: 'shakshi',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 32,
+    city: 'New Delhi',
+    salary: 500000,
+    skills: [ 'Python', 'C++', 'Java', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a6'),
+    id: '13',
+    username: 'Rahul Verma',
+    useremail: 'rahul.verma@yahoo.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'New Delhi',
+    salary: 700000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a4'),
+    id: '11',
+    username: 'Amit Singh',
+    useremail: 'amit.singh@yahoo.com',
+    password: 'Amit123',
+    firstName: 'Amit',
+    lastName: 'Singh',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 1500000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e4799'),
+    id: '1',
+    username: 'Prajjal Dhar',
+    useremail: 'prajjal.dhar@gmail.com',
+    password: 'Regex1234',
+    firstName: 'Prajjal',
+    lastName: 'Dhar',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 300000,
+    skills: [ 'Java', 'Python' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47aa'),
+    id: '17',
+    username: 'Anjali Gupta',
+    useremail: 'anjali.gupta@yahoo.com',
+    password: 'Anjali123',
+    firstName: 'Anjali',
+    lastName: 'Gupta',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ac'),
+    id: '19',
+    username: 'Kritika Verma',
+    useremail: 'kritika.verma@regexsoftware.com',
+    password: 'Kritika123',
+    firstName: 'Kritika',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Kolkata',
+    salary: 2500000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+
+Find all documents where the user has the skill "Java" and "Python".
+db.users.find({skills:["Java","Python"]})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e4799'),
+    id: '1',
+    username: 'Prajjal Dhar',
+    useremail: 'prajjal.dhar@gmail.com',
+    password: 'Regex1234',
+    firstName: 'Prajjal',
+    lastName: 'Dhar',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 300000,
+    skills: [ 'Java', 'Python' ]
+  }
+]
+
+
+
+Retrieve all documents where the user's first name is "Aryan" or the last name is "Gupta".
+ db.users.find({"$or":[{firstName:"Aryan"},{lastName:"Gupta"}]})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47ad'),
+    id: '20',
+    username: 'Aryan Mishra',
+    useremail: 'aryan.mishra@gmail.com',
+    password: 'Aryan123',
+    firstName: 'Aryan',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 450000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a3'),
+    id: '10',
+    username: 'Priya Gupta',
+    useremail: 'priya.gupta@regexsoftware.com',
+    password: 'Priya123',
+    firstName: 'Priya',
+    lastName: 'Gupta',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 1800000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47aa'),
+    id: '17',
+    username: 'Anjali Gupta',
+    useremail: 'anjali.gupta@yahoo.com',
+    password: 'Anjali123',
+    firstName: 'Anjali',
+    lastName: 'Gupta',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  }
+]
+
+
+
+
+
+Find all documents where the user has the skill "Java" but not "Python".
+db.users.find({skills:"Java",skills:{"$ne":"Python"}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479c'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 500000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ],
+    role: 'customer'
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ad'),
+    id: '20',
+    username: 'Aryan Mishra',
+    useremail: 'aryan.mishra@gmail.com',
+    password: 'Aryan123',
+    firstName: 'Aryan',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 450000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479d'),
+    id: '4',
+    username: 'Sumanth Rao',
+    useremail: 'sumanth.rao@gmail.com',
+    password: 'Sumanth123',
+    firstName: 'Sumanth',
+    lastName: 'Rao',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Mumbai',
+    salary: 700000,
+    skills: [ 'Java', 'JavaScript' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a1'),
+    id: '8',
+    username: 'Abhishek Verma',
+    useremail: 'abhishek.verma@yahoo.com',
+    password: 'Abhishek123',
+    firstName: 'Abhishek',
+    lastName: 'Verma',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 1000000,
+    skills: [ 'Java', 'C#', 'ASP.NET', 'SQL Server' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a9'),
+    id: '16',
+    username: 'Vishal Singh',
+    useremail: 'vishal.singh@regexsoftware.com',
+    password: 'Vishal123',
+    firstName: 'Vishal',
+    lastName: 'Singh',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Jaipur',
+    salary: 750000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a5'),
+    id: '12',
+    username: 'Neha Sharma',
+    useremail: 'neha.sharma@regexsoftware.com',
+    password: 'Neha123',
+    firstName: 'Neha',
+    lastName: 'Sharma',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'New Delhi',
+    salary: 900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ab'),
+    id: '18',
+    username: 'Sachin Patel',
+    useremail: 'sachin.patel@regexsoftware.com',
+    password: 'Sachin123',
+    firstName: 'Sachin',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 1900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479b'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Mumbai',
+    salary: 800000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a7'),
+    id: '14',
+    username: 'Sakshi Mishra',
+    useremail: 'sakshi.mishra@yahoo.com',
+    password: 'Sakshi123',
+    firstName: 'Sakshi',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 650000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479f'),
+    id: '6',
+    username: 'Vikram Patel',
+    useremail: 'vikram.patel@regexsoftware.com',
+    password: 'Vikram123',
+    firstName: 'Vikram',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Assam',
+    salary: 900000,
+    skills: [ 'Java', 'C++', 'SQL', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a3'),
+    id: '10',
+    username: 'Priya Gupta',
+    useremail: 'priya.gupta@regexsoftware.com',
+    password: 'Priya123',
+    firstName: 'Priya',
+    lastName: 'Gupta',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 1800000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  }
+]
+
+
+
+
+
+Retrieve all documents where the user's last name is "Sharma" and the role is "customer".
+db.users.find({role:"admin", lastName:/Sharma$/})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a0'),
+    id: '7',
+    username: 'Riya Sharma',
+    useremail: 'riya.sharma@gmail.com',
+    password: 'Riya123',
+    firstName: 'Riya',
+    lastName: 'Sharma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'Python', 'JavaScript', 'Node.js' ]
+  }
+]
+
+
+
+
+Find all documents where the user has exactly three skills.
+db.users.find({"skills.2":{$exists:true}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479c'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 500000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ],
+    role: 'customer'
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a2'),
+    id: '9',
+    username: 'Rajesh Patel',
+    useremail: 'rajesh.patel@gmail.com',
+    password: 'Rajesh123',
+    firstName: 'Rajesh',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 1200000,
+    skills: [ 'Python', 'C++', 'Django', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a8'),
+    id: '15',
+    username: 'Rahul Kumar',
+    useremail: 'rahul.kumar@gmail.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Kumar',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 900000,
+    skills: [ 'Python', 'Django', 'Flask', 'SQLAlchemy' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ad'),
+    id: '20',
+    username: 'Aryan Mishra',
+    useremail: 'aryan.mishra@gmail.com',
+    password: 'Aryan123',
+    firstName: 'Aryan',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 450000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a1'),
+    id: '8',
+    username: 'Abhishek Verma',
+    useremail: 'abhishek.verma@yahoo.com',
+    password: 'Abhishek123',
+    firstName: 'Abhishek',
+    lastName: 'Verma',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 1000000,
+    skills: [ 'Java', 'C#', 'ASP.NET', 'SQL Server' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a9'),
+    id: '16',
+    username: 'Vishal Singh',
+    useremail: 'vishal.singh@regexsoftware.com',
+    password: 'Vishal123',
+    firstName: 'Vishal',
+    lastName: 'Singh',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Jaipur',
+    salary: 750000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479e'),
+    id: '5',
+    username: 'Ananya Singh',
+    useremail: 'ananya.singh@yahoo.com',
+    password: 'Ananya123',
+    firstName: 'Ananya',
+    lastName: 'Singh',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 600000,
+    skills: [ 'Python', 'C++', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a5'),
+    id: '12',
+    username: 'Neha Sharma',
+    useremail: 'neha.sharma@regexsoftware.com',
+    password: 'Neha123',
+    firstName: 'Neha',
+    lastName: 'Sharma',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'New Delhi',
+    salary: 900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ab'),
+    id: '18',
+    username: 'Sachin Patel',
+    useremail: 'sachin.patel@regexsoftware.com',
+    password: 'Sachin123',
+    firstName: 'Sachin',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 1900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479b'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Mumbai',
+    salary: 800000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a0'),
+    id: '7',
+    username: 'Riya Sharma',
+    useremail: 'riya.sharma@gmail.com',
+    password: 'Riya123',
+    firstName: 'Riya',
+    lastName: 'Sharma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'Python', 'JavaScript', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479a'),
+    id: '2',
+    username: 'Shakshi Karamchandani',
+    useremail: 'shakshi.karamchandani@yahoo.com',
+    password: 'shakshi123',
+    firstName: 'shakshi',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 32,
+    city: 'New Delhi',
+    salary: 500000,
+    skills: [ 'Python', 'C++', 'Java', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a7'),
+    id: '14',
+    username: 'Sakshi Mishra',
+    useremail: 'sakshi.mishra@yahoo.com',
+    password: 'Sakshi123',
+    firstName: 'Sakshi',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 650000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a6'),
+    id: '13',
+    username: 'Rahul Verma',
+    useremail: 'rahul.verma@yahoo.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'New Delhi',
+    salary: 700000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a4'),
+    id: '11',
+    username: 'Amit Singh',
+    useremail: 'amit.singh@yahoo.com',
+    password: 'Amit123',
+    firstName: 'Amit',
+    lastName: 'Singh',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 1500000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479f'),
+    id: '6',
+    username: 'Vikram Patel',
+    useremail: 'vikram.patel@regexsoftware.com',
+    password: 'Vikram123',
+    firstName: 'Vikram',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Assam',
+    salary: 900000,
+    skills: [ 'Java', 'C++', 'SQL', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a3'),
+    id: '10',
+    username: 'Priya Gupta',
+    useremail: 'priya.gupta@regexsoftware.com',
+    password: 'Priya123',
+    firstName: 'Priya',
+    lastName: 'Gupta',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 1800000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47aa'),
+    id: '17',
+    username: 'Anjali Gupta',
+    useremail: 'anjali.gupta@yahoo.com',
+    password: 'Anjali123',
+    firstName: 'Anjali',
+    lastName: 'Gupta',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ac'),
+    id: '19',
+    username: 'Kritika Verma',
+    useremail: 'kritika.verma@regexsoftware.com',
+    password: 'Kritika123',
+    firstName: 'Kritika',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Kolkata',
+    salary: 2500000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+
+
+Retrieve all documents where the user's first name starts with "S" and the role is "admin".
+db.users.find({role:"admin", firstName:/^S/})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479d'),
+    id: '4',
+    username: 'Sumanth Rao',
+    useremail: 'sumanth.rao@gmail.com',
+    password: 'Sumanth123',
+    firstName: 'Sumanth',
+    lastName: 'Rao',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Mumbai',
+    salary: 700000,
+    skills: [ 'Java', 'JavaScript' ]
+  }
+]
+
+
+
+
+Find all documents where the user has the skill "Java" and the role is not "admin".
+ db.users.find({skills:"Java",role:{"$ne":"admin"}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47ad'),
+    id: '20',
+    username: 'Aryan Mishra',
+    useremail: 'aryan.mishra@gmail.com',
+    password: 'Aryan123',
+    firstName: 'Aryan',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 450000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a1'),
+    id: '8',
+    username: 'Abhishek Verma',
+    useremail: 'abhishek.verma@yahoo.com',
+    password: 'Abhishek123',
+    firstName: 'Abhishek',
+    lastName: 'Verma',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 1000000,
+    skills: [ 'Java', 'C#', 'ASP.NET', 'SQL Server' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a5'),
+    id: '12',
+    username: 'Neha Sharma',
+    useremail: 'neha.sharma@regexsoftware.com',
+    password: 'Neha123',
+    firstName: 'Neha',
+    lastName: 'Sharma',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'New Delhi',
+    salary: 900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ab'),
+    id: '18',
+    username: 'Sachin Patel',
+    useremail: 'sachin.patel@regexsoftware.com',
+    password: 'Sachin123',
+    firstName: 'Sachin',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 1900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479a'),
+    id: '2',
+    username: 'Shakshi Karamchandani',
+    useremail: 'shakshi.karamchandani@yahoo.com',
+    password: 'shakshi123',
+    firstName: 'shakshi',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 32,
+    city: 'New Delhi',
+    salary: 500000,
+    skills: [ 'Python', 'C++', 'Java', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a7'),
+    id: '14',
+    username: 'Sakshi Mishra',
+    useremail: 'sakshi.mishra@yahoo.com',
+    password: 'Sakshi123',
+    firstName: 'Sakshi',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 650000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479f'),
+    id: '6',
+    username: 'Vikram Patel',
+    useremail: 'vikram.patel@regexsoftware.com',
+    password: 'Vikram123',
+    firstName: 'Vikram',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Assam',
+    salary: 900000,
+    skills: [ 'Java', 'C++', 'SQL', 'React' ]
+  }
+]
+
+
+
+
+
+
+Retrieve all documents where the user's role is not specified.
+db.users.find({"role":{$exists:false}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479c'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 500000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  }
+]
+
+
+
+
+
+Find all documents where the user has at least four skills.
+db.users.find({"skills.3":{$exists:true}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479c'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 500000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a2'),
+    id: '9',
+    username: 'Rajesh Patel',
+    useremail: 'rajesh.patel@gmail.com',
+    password: 'Rajesh123',
+    firstName: 'Rajesh',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 1200000,
+    skills: [ 'Python', 'C++', 'Django', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a8'),
+    id: '15',
+    username: 'Rahul Kumar',
+    useremail: 'rahul.kumar@gmail.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Kumar',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 900000,
+    skills: [ 'Python', 'Django', 'Flask', 'SQLAlchemy' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ad'),
+    id: '20',
+    username: 'Aryan Mishra',
+    useremail: 'aryan.mishra@gmail.com',
+    password: 'Aryan123',
+    firstName: 'Aryan',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 450000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a1'),
+    id: '8',
+    username: 'Abhishek Verma',
+    useremail: 'abhishek.verma@yahoo.com',
+    password: 'Abhishek123',
+    firstName: 'Abhishek',
+    lastName: 'Verma',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 1000000,
+    skills: [ 'Java', 'C#', 'ASP.NET', 'SQL Server' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479e'),
+    id: '5',
+    username: 'Ananya Singh',
+    useremail: 'ananya.singh@yahoo.com',
+    password: 'Ananya123',
+    firstName: 'Ananya',
+    lastName: 'Singh',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 600000,
+    skills: [ 'Python', 'C++', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a5'),
+    id: '12',
+    username: 'Neha Sharma',
+    useremail: 'neha.sharma@regexsoftware.com',
+    password: 'Neha123',
+    firstName: 'Neha',
+    lastName: 'Sharma',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'New Delhi',
+    salary: 900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ab'),
+    id: '18',
+    username: 'Sachin Patel',
+    useremail: 'sachin.patel@regexsoftware.com',
+    password: 'Sachin123',
+    firstName: 'Sachin',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 1900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479b'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Mumbai',
+    salary: 800000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479a'),
+    id: '2',
+    username: 'Shakshi Karamchandani',
+    useremail: 'shakshi.karamchandani@yahoo.com',
+    password: 'shakshi123',
+    firstName: 'shakshi',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 32,
+    city: 'New Delhi',
+    salary: 500000,
+    skills: [ 'Python', 'C++', 'Java', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a7'),
+    id: '14',
+    username: 'Sakshi Mishra',
+    useremail: 'sakshi.mishra@yahoo.com',
+    password: 'Sakshi123',
+    firstName: 'Sakshi',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 650000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a4'),
+    id: '11',
+    username: 'Amit Singh',
+    useremail: 'amit.singh@yahoo.com',
+    password: 'Amit123',
+    firstName: 'Amit',
+    lastName: 'Singh',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 1500000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479f'),
+    id: '6',
+    username: 'Vikram Patel',
+    useremail: 'vikram.patel@regexsoftware.com',
+    password: 'Vikram123',
+    firstName: 'Vikram',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Assam',
+    salary: 900000,
+    skills: [ 'Java', 'C++', 'SQL', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47aa'),
+    id: '17',
+    username: 'Anjali Gupta',
+    useremail: 'anjali.gupta@yahoo.com',
+    password: 'Anjali123',
+    firstName: 'Anjali',
+    lastName: 'Gupta',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  }
+]
+
+
+
+
+
+Retrieve all documents where the user's role is "customer" and the user has no specified skills.
+db.collection.find({ role: "customer", skills: { $exists: false } })
+
+
+
+Find all documents where the user's email contains "regexsoftware.com".
+ db.users.find({useremail:/@regexsoftware.com/})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479c'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 500000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a9'),
+    id: '16',
+    username: 'Vishal Singh',
+    useremail: 'vishal.singh@regexsoftware.com',
+    password: 'Vishal123',
+    firstName: 'Vishal',
+    lastName: 'Singh',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Jaipur',
+    salary: 750000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a5'),
+    id: '12',
+    username: 'Neha Sharma',
+    useremail: 'neha.sharma@regexsoftware.com',
+    password: 'Neha123',
+    firstName: 'Neha',
+    lastName: 'Sharma',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'New Delhi',
+    salary: 900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ab'),
+    id: '18',
+    username: 'Sachin Patel',
+    useremail: 'sachin.patel@regexsoftware.com',
+    password: 'Sachin123',
+    firstName: 'Sachin',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 1900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479b'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Mumbai',
+    salary: 800000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479f'),
+    id: '6',
+    username: 'Vikram Patel',
+    useremail: 'vikram.patel@regexsoftware.com',
+    password: 'Vikram123',
+    firstName: 'Vikram',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Assam',
+    salary: 900000,
+    skills: [ 'Java', 'C++', 'SQL', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a3'),
+    id: '10',
+    username: 'Priya Gupta',
+    useremail: 'priya.gupta@regexsoftware.com',
+    password: 'Priya123',
+    firstName: 'Priya',
+    lastName: 'Gupta',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 1800000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ac'),
+    id: '19',
+    username: 'Kritika Verma',
+    useremail: 'kritika.verma@regexsoftware.com',
+    password: 'Kritika123',
+    firstName: 'Kritika',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Kolkata',
+    salary: 2500000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+
+Retrieve all documents where the user's email does not contain "gmail.com".
+db.users.find({useremail:{"$not":/@gmail.com/}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479c'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 500000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a1'),
+    id: '8',
+    username: 'Abhishek Verma',
+    useremail: 'abhishek.verma@yahoo.com',
+    password: 'Abhishek123',
+    firstName: 'Abhishek',
+    lastName: 'Verma',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 1000000,
+    skills: [ 'Java', 'C#', 'ASP.NET', 'SQL Server' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a9'),
+    id: '16',
+    username: 'Vishal Singh',
+    useremail: 'vishal.singh@regexsoftware.com',
+    password: 'Vishal123',
+    firstName: 'Vishal',
+    lastName: 'Singh',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Jaipur',
+    salary: 750000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479e'),
+    id: '5',
+    username: 'Ananya Singh',
+    useremail: 'ananya.singh@yahoo.com',
+    password: 'Ananya123',
+    firstName: 'Ananya',
+    lastName: 'Singh',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 600000,
+    skills: [ 'Python', 'C++', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a5'),
+    id: '12',
+    username: 'Neha Sharma',
+    useremail: 'neha.sharma@regexsoftware.com',
+    password: 'Neha123',
+    firstName: 'Neha',
+    lastName: 'Sharma',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'New Delhi',
+    salary: 900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ab'),
+    id: '18',
+    username: 'Sachin Patel',
+    useremail: 'sachin.patel@regexsoftware.com',
+    password: 'Sachin123',
+    firstName: 'Sachin',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 1900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479b'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Mumbai',
+    salary: 800000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479a'),
+    id: '2',
+    username: 'Shakshi Karamchandani',
+    useremail: 'shakshi.karamchandani@yahoo.com',
+    password: 'shakshi123',
+    firstName: 'shakshi',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 32,
+    city: 'New Delhi',
+    salary: 500000,
+    skills: [ 'Python', 'C++', 'Java', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a7'),
+    id: '14',
+    username: 'Sakshi Mishra',
+    useremail: 'sakshi.mishra@yahoo.com',
+    password: 'Sakshi123',
+    firstName: 'Sakshi',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 650000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a6'),
+    id: '13',
+    username: 'Rahul Verma',
+    useremail: 'rahul.verma@yahoo.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'New Delhi',
+    salary: 700000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a4'),
+    id: '11',
+    username: 'Amit Singh',
+    useremail: 'amit.singh@yahoo.com',
+    password: 'Amit123',
+    firstName: 'Amit',
+    lastName: 'Singh',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 1500000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479f'),
+    id: '6',
+    username: 'Vikram Patel',
+    useremail: 'vikram.patel@regexsoftware.com',
+    password: 'Vikram123',
+    firstName: 'Vikram',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Assam',
+    salary: 900000,
+    skills: [ 'Java', 'C++', 'SQL', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a3'),
+    id: '10',
+    username: 'Priya Gupta',
+    useremail: 'priya.gupta@regexsoftware.com',
+    password: 'Priya123',
+    firstName: 'Priya',
+    lastName: 'Gupta',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 1800000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47aa'),
+    id: '17',
+    username: 'Anjali Gupta',
+    useremail: 'anjali.gupta@yahoo.com',
+    password: 'Anjali123',
+    firstName: 'Anjali',
+    lastName: 'Gupta',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ac'),
+    id: '19',
+    username: 'Kritika Verma',
+    useremail: 'kritika.verma@regexsoftware.com',
+    password: 'Kritika123',
+    firstName: 'Kritika',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Kolkata',
+    salary: 2500000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+
+Find all documents where the user's last name is not "Singh".
+db.users.find({lastName:{"$not":/Singh/}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479c'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 500000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a2'),
+    id: '9',
+    username: 'Rajesh Patel',
+    useremail: 'rajesh.patel@gmail.com',
+    password: 'Rajesh123',
+    firstName: 'Rajesh',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 1200000,
+    skills: [ 'Python', 'C++', 'Django', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a8'),
+    id: '15',
+    username: 'Rahul Kumar',
+    useremail: 'rahul.kumar@gmail.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Kumar',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 900000,
+    skills: [ 'Python', 'Django', 'Flask', 'SQLAlchemy' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ad'),
+    id: '20',
+    username: 'Aryan Mishra',
+    useremail: 'aryan.mishra@gmail.com',
+    password: 'Aryan123',
+    firstName: 'Aryan',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 450000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479d'),
+    id: '4',
+    username: 'Sumanth Rao',
+    useremail: 'sumanth.rao@gmail.com',
+    password: 'Sumanth123',
+    firstName: 'Sumanth',
+    lastName: 'Rao',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Mumbai',
+    salary: 700000,
+    skills: [ 'Java', 'JavaScript' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a1'),
+    id: '8',
+    username: 'Abhishek Verma',
+    useremail: 'abhishek.verma@yahoo.com',
+    password: 'Abhishek123',
+    firstName: 'Abhishek',
+    lastName: 'Verma',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 1000000,
+    skills: [ 'Java', 'C#', 'ASP.NET', 'SQL Server' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a5'),
+    id: '12',
+    username: 'Neha Sharma',
+    useremail: 'neha.sharma@regexsoftware.com',
+    password: 'Neha123',
+    firstName: 'Neha',
+    lastName: 'Sharma',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'New Delhi',
+    salary: 900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ab'),
+    id: '18',
+    username: 'Sachin Patel',
+    useremail: 'sachin.patel@regexsoftware.com',
+    password: 'Sachin123',
+    firstName: 'Sachin',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 1900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479b'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Mumbai',
+    salary: 800000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a0'),
+    id: '7',
+    username: 'Riya Sharma',
+    useremail: 'riya.sharma@gmail.com',
+    password: 'Riya123',
+    firstName: 'Riya',
+    lastName: 'Sharma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'Python', 'JavaScript', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479a'),
+    id: '2',
+    username: 'Shakshi Karamchandani',
+    useremail: 'shakshi.karamchandani@yahoo.com',
+    password: 'shakshi123',
+    firstName: 'shakshi',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 32,
+    city: 'New Delhi',
+    salary: 500000,
+    skills: [ 'Python', 'C++', 'Java', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a7'),
+    id: '14',
+    username: 'Sakshi Mishra',
+    useremail: 'sakshi.mishra@yahoo.com',
+    password: 'Sakshi123',
+    firstName: 'Sakshi',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 650000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a6'),
+    id: '13',
+    username: 'Rahul Verma',
+    useremail: 'rahul.verma@yahoo.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'New Delhi',
+    salary: 700000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479f'),
+    id: '6',
+    username: 'Vikram Patel',
+    useremail: 'vikram.patel@regexsoftware.com',
+    password: 'Vikram123',
+    firstName: 'Vikram',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Assam',
+    salary: 900000,
+    skills: [ 'Java', 'C++', 'SQL', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a3'),
+    id: '10',
+    username: 'Priya Gupta',
+    useremail: 'priya.gupta@regexsoftware.com',
+    password: 'Priya123',
+    firstName: 'Priya',
+    lastName: 'Gupta',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 1800000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e4799'),
+    id: '1',
+    username: 'Prajjal Dhar',
+    useremail: 'prajjal.dhar@gmail.com',
+    password: 'Regex1234',
+    firstName: 'Prajjal',
+    lastName: 'Dhar',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 300000,
+    skills: [ 'Java', 'Python' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47aa'),
+    id: '17',
+    username: 'Anjali Gupta',
+    useremail: 'anjali.gupta@yahoo.com',
+    password: 'Anjali123',
+    firstName: 'Anjali',
+    lastName: 'Gupta',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ac'),
+    id: '19',
+    username: 'Kritika Verma',
+    useremail: 'kritika.verma@regexsoftware.com',
+    password: 'Kritika123',
+    firstName: 'Kritika',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Kolkata',
+    salary: 2500000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+
+Retrieve all documents where the user's role is "admin" and the user has the skill "Java".
+db.users.find({role:"admin",skills:"Java"})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479d'),
+    id: '4',
+    username: 'Sumanth Rao',
+    useremail: 'sumanth.rao@gmail.com',
+    password: 'Sumanth123',
+    firstName: 'Sumanth',
+    lastName: 'Rao',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Mumbai',
+    salary: 700000,
+    skills: [ 'Java', 'JavaScript' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a9'),
+    id: '16',
+    username: 'Vishal Singh',
+    useremail: 'vishal.singh@regexsoftware.com',
+    password: 'Vishal123',
+    firstName: 'Vishal',
+    lastName: 'Singh',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Jaipur',
+    salary: 750000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a3'),
+    id: '10',
+    username: 'Priya Gupta',
+    useremail: 'priya.gupta@regexsoftware.com',
+    password: 'Priya123',
+    firstName: 'Priya',
+    lastName: 'Gupta',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 1800000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e4799'),
+    id: '1',
+    username: 'Prajjal Dhar',
+    useremail: 'prajjal.dhar@gmail.com',
+    password: 'Regex1234',
+    firstName: 'Prajjal',
+    lastName: 'Dhar',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 300000,
+    skills: [ 'Java', 'Python' ]
+  }
+]
+
+
+
+
+Find all documents where the user's first name is "Ananya" and the user's role is "customer".
+ db.users.find({role:"customer",firstName:"Ananya"})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479e'),
+    id: '5',
+    username: 'Ananya Singh',
+    useremail: 'ananya.singh@yahoo.com',
+    password: 'Ananya123',
+    firstName: 'Ananya',
+    lastName: 'Singh',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 600000,
+    skills: [ 'Python', 'C++', 'HTML', 'CSS' ]
+  }
+]
+
+
+
+
+
+
+Find all documents where the user's role is "admin" and the user's first name starts with "R".
+ db.users.find({role:"admin",firstName:/^R/})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a0'),
+    id: '7',
+    username: 'Riya Sharma',
+    useremail: 'riya.sharma@gmail.com',
+    password: 'Riya123',
+    firstName: 'Riya',
+    lastName: 'Sharma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'Python', 'JavaScript', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a6'),
+    id: '13',
+    username: 'Rahul Verma',
+    useremail: 'rahul.verma@yahoo.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'New Delhi',
+    salary: 700000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+
+Retrieve all documents where the user's role is "customer" and the user's last name is "Patel".
+db.users.find({role:"customer",lastName:"Patel"})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a2'),
+    id: '9',
+    username: 'Rajesh Patel',
+    useremail: 'rajesh.patel@gmail.com',
+    password: 'Rajesh123',
+    firstName: 'Rajesh',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 1200000,
+    skills: [ 'Python', 'C++', 'Django', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ab'),
+    id: '18',
+    username: 'Sachin Patel',
+    useremail: 'sachin.patel@regexsoftware.com',
+    password: 'Sachin123',
+    firstName: 'Sachin',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 1900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479f'),
+    id: '6',
+    username: 'Vikram Patel',
+    useremail: 'vikram.patel@regexsoftware.com',
+    password: 'Vikram123',
+    firstName: 'Vikram',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Assam',
+    salary: 900000,
+    skills: [ 'Java', 'C++', 'SQL', 'React' ]
+  }
+]
+
+
+
+
+
+Find all documents where the user's role is "admin" and the user has the skill "Python".
+ db.users.find({role:"admin",skills:"Python"})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a0'),
+    id: '7',
+    username: 'Riya Sharma',
+    useremail: 'riya.sharma@gmail.com',
+    password: 'Riya123',
+    firstName: 'Riya',
+    lastName: 'Sharma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'Python', 'JavaScript', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a6'),
+    id: '13',
+    username: 'Rahul Verma',
+    useremail: 'rahul.verma@yahoo.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'New Delhi',
+    salary: 700000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e4799'),
+    id: '1',
+    username: 'Prajjal Dhar',
+    useremail: 'prajjal.dhar@gmail.com',
+    password: 'Regex1234',
+    firstName: 'Prajjal',
+    lastName: 'Dhar',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 300000,
+    skills: [ 'Java', 'Python' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ac'),
+    id: '19',
+    username: 'Kritika Verma',
+    useremail: 'kritika.verma@regexsoftware.com',
+    password: 'Kritika123',
+    firstName: 'Kritika',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Kolkata',
+    salary: 2500000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+
+Retrieve all documents where the user's role is "customer" and the user's last name is not "Gupta".
+db.users.find({role:"customer",lastName:{"$ne":"Patel"}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a8'),
+    id: '15',
+    username: 'Rahul Kumar',
+    useremail: 'rahul.kumar@gmail.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Kumar',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 900000,
+    skills: [ 'Python', 'Django', 'Flask', 'SQLAlchemy' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ad'),
+    id: '20',
+    username: 'Aryan Mishra',
+    useremail: 'aryan.mishra@gmail.com',
+    password: 'Aryan123',
+    firstName: 'Aryan',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 450000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a1'),
+    id: '8',
+    username: 'Abhishek Verma',
+    useremail: 'abhishek.verma@yahoo.com',
+    password: 'Abhishek123',
+    firstName: 'Abhishek',
+    lastName: 'Verma',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 1000000,
+    skills: [ 'Java', 'C#', 'ASP.NET', 'SQL Server' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479e'),
+    id: '5',
+    username: 'Ananya Singh',
+    useremail: 'ananya.singh@yahoo.com',
+    password: 'Ananya123',
+    firstName: 'Ananya',
+    lastName: 'Singh',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 600000,
+    skills: [ 'Python', 'C++', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a5'),
+    id: '12',
+    username: 'Neha Sharma',
+    useremail: 'neha.sharma@regexsoftware.com',
+    password: 'Neha123',
+    firstName: 'Neha',
+    lastName: 'Sharma',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'New Delhi',
+    salary: 900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479b'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Mumbai',
+    salary: 800000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479a'),
+    id: '2',
+    username: 'Shakshi Karamchandani',
+    useremail: 'shakshi.karamchandani@yahoo.com',
+    password: 'shakshi123',
+    firstName: 'shakshi',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 32,
+    city: 'New Delhi',
+    salary: 500000,
+    skills: [ 'Python', 'C++', 'Java', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a7'),
+    id: '14',
+    username: 'Sakshi Mishra',
+    useremail: 'sakshi.mishra@yahoo.com',
+    password: 'Sakshi123',
+    firstName: 'Sakshi',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 650000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a4'),
+    id: '11',
+    username: 'Amit Singh',
+    useremail: 'amit.singh@yahoo.com',
+    password: 'Amit123',
+    firstName: 'Amit',
+    lastName: 'Singh',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 1500000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47aa'),
+    id: '17',
+    username: 'Anjali Gupta',
+    useremail: 'anjali.gupta@yahoo.com',
+    password: 'Anjali123',
+    firstName: 'Anjali',
+    lastName: 'Gupta',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  }
+]
+
+
+
+
+Find all documents where the user's role is "admin" and the user's email ends with "@regexsoftware.com".
+ db.users.find({role:"admin",useremail:/regexsoftware/})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a9'),
+    id: '16',
+    username: 'Vishal Singh',
+    useremail: 'vishal.singh@regexsoftware.com',
+    password: 'Vishal123',
+    firstName: 'Vishal',
+    lastName: 'Singh',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Jaipur',
+    salary: 750000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a3'),
+    id: '10',
+    username: 'Priya Gupta',
+    useremail: 'priya.gupta@regexsoftware.com',
+    password: 'Priya123',
+    firstName: 'Priya',
+    lastName: 'Gupta',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 1800000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ac'),
+    id: '19',
+    username: 'Kritika Verma',
+    useremail: 'kritika.verma@regexsoftware.com',
+    password: 'Kritika123',
+    firstName: 'Kritika',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Kolkata',
+    salary: 2500000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+
+
+Retrieve all documents where the user's role is "customer" and the user has the skill "React".
+db.users.find({role:"customer",skills:"React"})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a2'),
+    id: '9',
+    username: 'Rajesh Patel',
+    useremail: 'rajesh.patel@gmail.com',
+    password: 'Rajesh123',
+    firstName: 'Rajesh',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 1200000,
+    skills: [ 'Python', 'C++', 'Django', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a5'),
+    id: '12',
+    username: 'Neha Sharma',
+    useremail: 'neha.sharma@regexsoftware.com',
+    password: 'Neha123',
+    firstName: 'Neha',
+    lastName: 'Sharma',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'New Delhi',
+    salary: 900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ab'),
+    id: '18',
+    username: 'Sachin Patel',
+    useremail: 'sachin.patel@regexsoftware.com',
+    password: 'Sachin123',
+    firstName: 'Sachin',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 1900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479f'),
+    id: '6',
+    username: 'Vikram Patel',
+    useremail: 'vikram.patel@regexsoftware.com',
+    password: 'Vikram123',
+    firstName: 'Vikram',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Assam',
+    salary: 900000,
+    skills: [ 'Java', 'C++', 'SQL', 'React' ]
+  }
+]
+
+
+
+
+
+Find all documents where the user's role is "customer" and the user has the skill "SQL".
+db.users.find({role:"customer",skills:"SQL"})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479f'),
+    id: '6',
+    username: 'Vikram Patel',
+    useremail: 'vikram.patel@regexsoftware.com',
+    password: 'Vikram123',
+    firstName: 'Vikram',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Assam',
+    salary: 900000,
+    skills: [ 'Java', 'C++', 'SQL', 'React' ]
+  }
+]
+
+
+
+
+
+Retrieve all documents where the user's role is "admin" and the user's email does not contain "gmail.com".
+db.users.find({role:"admin",useremail:{"$not":/@gmail.com/}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a9'),
+    id: '16',
+    username: 'Vishal Singh',
+    useremail: 'vishal.singh@regexsoftware.com',
+    password: 'Vishal123',
+    firstName: 'Vishal',
+    lastName: 'Singh',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Jaipur',
+    salary: 750000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a6'),
+    id: '13',
+    username: 'Rahul Verma',
+    useremail: 'rahul.verma@yahoo.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'New Delhi',
+    salary: 700000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a3'),
+    id: '10',
+    username: 'Priya Gupta',
+    useremail: 'priya.gupta@regexsoftware.com',
+    password: 'Priya123',
+    firstName: 'Priya',
+    lastName: 'Gupta',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 1800000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ac'),
+    id: '19',
+    username: 'Kritika Verma',
+    useremail: 'kritika.verma@regexsoftware.com',
+    password: 'Kritika123',
+    firstName: 'Kritika',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Kolkata',
+    salary: 2500000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+
+
+Find all documents where the user's role is "customer" and the user's last name starts with "M".
+ db.users.find({role:"customer",lastName:/^M/})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47ad'),
+    id: '20',
+    username: 'Aryan Mishra',
+    useremail: 'aryan.mishra@gmail.com',
+    password: 'Aryan123',
+    firstName: 'Aryan',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 450000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a7'),
+    id: '14',
+    username: 'Sakshi Mishra',
+    useremail: 'sakshi.mishra@yahoo.com',
+    password: 'Sakshi123',
+    firstName: 'Sakshi',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 650000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  }
+]
+
+
+
+
+
+Retrieve all documents where the user's role is "admin" and the user's first name is not "Rahul".
+ db.users.find({role:"admin",firstName:{"$not":/Rahul/}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479d'),
+    id: '4',
+    username: 'Sumanth Rao',
+    useremail: 'sumanth.rao@gmail.com',
+    password: 'Sumanth123',
+    firstName: 'Sumanth',
+    lastName: 'Rao',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Mumbai',
+    salary: 700000,
+    skills: [ 'Java', 'JavaScript' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a9'),
+    id: '16',
+    username: 'Vishal Singh',
+    useremail: 'vishal.singh@regexsoftware.com',
+    password: 'Vishal123',
+    firstName: 'Vishal',
+    lastName: 'Singh',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Jaipur',
+    salary: 750000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a0'),
+    id: '7',
+    username: 'Riya Sharma',
+    useremail: 'riya.sharma@gmail.com',
+    password: 'Riya123',
+    firstName: 'Riya',
+    lastName: 'Sharma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'Python', 'JavaScript', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a3'),
+    id: '10',
+    username: 'Priya Gupta',
+    useremail: 'priya.gupta@regexsoftware.com',
+    password: 'Priya123',
+    firstName: 'Priya',
+    lastName: 'Gupta',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 1800000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e4799'),
+    id: '1',
+    username: 'Prajjal Dhar',
+    useremail: 'prajjal.dhar@gmail.com',
+    password: 'Regex1234',
+    firstName: 'Prajjal',
+    lastName: 'Dhar',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 300000,
+    skills: [ 'Java', 'Python' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ac'),
+    id: '19',
+    username: 'Kritika Verma',
+    useremail: 'kritika.verma@regexsoftware.com',
+    password: 'Kritika123',
+    firstName: 'Kritika',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Kolkata',
+    salary: 2500000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+Find all documents where the user's role is "customer" and the user's email does not contain "gmail.com".
+db.users.find({role:"customer",useremail:{"$not":/@gmail.com/}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a1'),
+    id: '8',
+    username: 'Abhishek Verma',
+    useremail: 'abhishek.verma@yahoo.com',
+    password: 'Abhishek123',
+    firstName: 'Abhishek',
+    lastName: 'Verma',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 1000000,
+    skills: [ 'Java', 'C#', 'ASP.NET', 'SQL Server' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479e'),
+    id: '5',
+    username: 'Ananya Singh',
+    useremail: 'ananya.singh@yahoo.com',
+    password: 'Ananya123',
+    firstName: 'Ananya',
+    lastName: 'Singh',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 600000,
+    skills: [ 'Python', 'C++', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a5'),
+    id: '12',
+    username: 'Neha Sharma',
+    useremail: 'neha.sharma@regexsoftware.com',
+    password: 'Neha123',
+    firstName: 'Neha',
+    lastName: 'Sharma',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'New Delhi',
+    salary: 900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ab'),
+    id: '18',
+    username: 'Sachin Patel',
+    useremail: 'sachin.patel@regexsoftware.com',
+    password: 'Sachin123',
+    firstName: 'Sachin',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 1900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479b'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Mumbai',
+    salary: 800000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479a'),
+    id: '2',
+    username: 'Shakshi Karamchandani',
+    useremail: 'shakshi.karamchandani@yahoo.com',
+    password: 'shakshi123',
+    firstName: 'shakshi',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 32,
+    city: 'New Delhi',
+    salary: 500000,
+    skills: [ 'Python', 'C++', 'Java', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a7'),
+    id: '14',
+    username: 'Sakshi Mishra',
+    useremail: 'sakshi.mishra@yahoo.com',
+    password: 'Sakshi123',
+    firstName: 'Sakshi',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 650000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a4'),
+    id: '11',
+    username: 'Amit Singh',
+    useremail: 'amit.singh@yahoo.com',
+    password: 'Amit123',
+    firstName: 'Amit',
+    lastName: 'Singh',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 1500000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479f'),
+    id: '6',
+    username: 'Vikram Patel',
+    useremail: 'vikram.patel@regexsoftware.com',
+    password: 'Vikram123',
+    firstName: 'Vikram',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Assam',
+    salary: 900000,
+    skills: [ 'Java', 'C++', 'SQL', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47aa'),
+    id: '17',
+    username: 'Anjali Gupta',
+    useremail: 'anjali.gupta@yahoo.com',
+    password: 'Anjali123',
+    firstName: 'Anjali',
+    lastName: 'Gupta',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  }
+]
+
+
+
+
+
+Retrieve all documents where the user's role is "admin" and the user has the skill "Java" but not "JavaScript".
+db.users.find({ role: "admin", skills: { $all: ["Java"], $nin: ["JavaScript"] } })
+
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a9'),
+    id: '16',
+    username: 'Vishal Singh',
+    useremail: 'vishal.singh@regexsoftware.com',
+    password: 'Vishal123',
+    firstName: 'Vishal',
+    lastName: 'Singh',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Jaipur',
+    salary: 750000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a3'),
+    id: '10',
+    username: 'Priya Gupta',
+    useremail: 'priya.gupta@regexsoftware.com',
+    password: 'Priya123',
+    firstName: 'Priya',
+    lastName: 'Gupta',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 1800000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e4799'),
+    id: '1',
+    username: 'Prajjal Dhar',
+    useremail: 'prajjal.dhar@gmail.com',
+    password: 'Regex1234',
+    firstName: 'Prajjal',
+    lastName: 'Dhar',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 300000,
+    skills: [ 'Java', 'Python' ]
+  }
+]
+
+
+
+Find all documents where the user's role is "customer" and the user's first name is not "Ananya".
+db.users.find({role:"customer",username:{"$not":/Ananya/}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a2'),
+    id: '9',
+    username: 'Rajesh Patel',
+    useremail: 'rajesh.patel@gmail.com',
+    password: 'Rajesh123',
+    firstName: 'Rajesh',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 1200000,
+    skills: [ 'Python', 'C++', 'Django', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a8'),
+    id: '15',
+    username: 'Rahul Kumar',
+    useremail: 'rahul.kumar@gmail.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Kumar',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 900000,
+    skills: [ 'Python', 'Django', 'Flask', 'SQLAlchemy' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ad'),
+    id: '20',
+    username: 'Aryan Mishra',
+    useremail: 'aryan.mishra@gmail.com',
+    password: 'Aryan123',
+    firstName: 'Aryan',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 450000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a1'),
+    id: '8',
+    username: 'Abhishek Verma',
+    useremail: 'abhishek.verma@yahoo.com',
+    password: 'Abhishek123',
+    firstName: 'Abhishek',
+    lastName: 'Verma',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 1000000,
+    skills: [ 'Java', 'C#', 'ASP.NET', 'SQL Server' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a5'),
+    id: '12',
+    username: 'Neha Sharma',
+    useremail: 'neha.sharma@regexsoftware.com',
+    password: 'Neha123',
+    firstName: 'Neha',
+    lastName: 'Sharma',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'New Delhi',
+    salary: 900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ab'),
+    id: '18',
+    username: 'Sachin Patel',
+    useremail: 'sachin.patel@regexsoftware.com',
+    password: 'Sachin123',
+    firstName: 'Sachin',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 1900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479b'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Mumbai',
+    salary: 800000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479a'),
+    id: '2',
+    username: 'Shakshi Karamchandani',
+    useremail: 'shakshi.karamchandani@yahoo.com',
+    password: 'shakshi123',
+    firstName: 'shakshi',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 32,
+    city: 'New Delhi',
+    salary: 500000,
+    skills: [ 'Python', 'C++', 'Java', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a7'),
+    id: '14',
+    username: 'Sakshi Mishra',
+    useremail: 'sakshi.mishra@yahoo.com',
+    password: 'Sakshi123',
+    firstName: 'Sakshi',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 650000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a4'),
+    id: '11',
+    username: 'Amit Singh',
+    useremail: 'amit.singh@yahoo.com',
+    password: 'Amit123',
+    firstName: 'Amit',
+    lastName: 'Singh',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Kolkata',
+    salary: 1500000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479f'),
+    id: '6',
+    username: 'Vikram Patel',
+    useremail: 'vikram.patel@regexsoftware.com',
+    password: 'Vikram123',
+    firstName: 'Vikram',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Assam',
+    salary: 900000,
+    skills: [ 'Java', 'C++', 'SQL', 'React' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47aa'),
+    id: '17',
+    username: 'Anjali Gupta',
+    useremail: 'anjali.gupta@yahoo.com',
+    password: 'Anjali123',
+    firstName: 'Anjali',
+    lastName: 'Gupta',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  }
+]
+
+
+
+
+Retrieve all documents where the user's role is "admin" and the user's email contains "regexsoftware.com".
+ db.users.find({role:"admin",useremail:/@regexsoftware.com$/})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a9'),
+    id: '16',
+    username: 'Vishal Singh',
+    useremail: 'vishal.singh@regexsoftware.com',
+    password: 'Vishal123',
+    firstName: 'Vishal',
+    lastName: 'Singh',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Jaipur',
+    salary: 750000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a3'),
+    id: '10',
+    username: 'Priya Gupta',
+    useremail: 'priya.gupta@regexsoftware.com',
+    password: 'Priya123',
+    firstName: 'Priya',
+    lastName: 'Gupta',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 1800000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ac'),
+    id: '19',
+    username: 'Kritika Verma',
+    useremail: 'kritika.verma@regexsoftware.com',
+    password: 'Kritika123',
+    firstName: 'Kritika',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Kolkata',
+    salary: 2500000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+
+Find all documents where the user's role is "customer" and the user has the skill "HTML" but not "CSS".
+ db.users.find({ role: "customer", skills: { $all: ["HTML"], $nin: ["CSS"] } })
+
+
+
+Retrieve all documents where the user's role is "admin" and the user has the skill "Java" and "JavaScript".
+ db.users.find({ role: "admin", skills: { $all: ["Java", "JavaScript"] } })
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479d'),
+    id: '4',
+    username: 'Sumanth Rao',
+    useremail: 'sumanth.rao@gmail.com',
+    password: 'Sumanth123',
+    firstName: 'Sumanth',
+    lastName: 'Rao',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Mumbai',
+    salary: 700000,
+    skills: [ 'Java', 'JavaScript' ]
+  }
+]
+
+
+
+
+Find all female users from Jaipur who know Python.
+db.users.find({gender:"Female",city:"Jaipur",skills:"Python"})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a0'),
+    id: '7',
+    username: 'Riya Sharma',
+    useremail: 'riya.sharma@gmail.com',
+    password: 'Riya123',
+    firstName: 'Riya',
+    lastName: 'Sharma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'Python', 'JavaScript', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47aa'),
+    id: '17',
+    username: 'Anjali Gupta',
+    useremail: 'anjali.gupta@yahoo.com',
+    password: 'Anjali123',
+    firstName: 'Anjali',
+    lastName: 'Gupta',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'C++', 'Python', 'HTML', 'CSS' ]
+  }
+]
+
+
+
+
+
+Find all male users in Delhi who are above age 26
+db.users.find({gender:"Male",city:"New Delhi",age:{$gt:26}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a6'),
+    id: '13',
+    username: 'Rahul Verma',
+    useremail: 'rahul.verma@yahoo.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'New Delhi',
+    salary: 700000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+
+Find all users who are from either New Delhi or Mumbai.
+db.users.find({ city: { $in: ["New Delhi", "Mumbai"] } })
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479d'),
+    id: '4',
+    username: 'Sumanth Rao',
+    useremail: 'sumanth.rao@gmail.com',
+    password: 'Sumanth123',
+    firstName: 'Sumanth',
+    lastName: 'Rao',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Mumbai',
+    salary: 700000,
+    skills: [ 'Java', 'JavaScript' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a5'),
+    id: '12',
+    username: 'Neha Sharma',
+    useremail: 'neha.sharma@regexsoftware.com',
+    password: 'Neha123',
+    firstName: 'Neha',
+    lastName: 'Sharma',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'New Delhi',
+    salary: 900000,
+    skills: [ 'Java', 'JavaScript', 'React', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479b'),
+    id: '3',
+    username: 'Kasish Karamchandani',
+    useremail: 'Kasish.karamchandani@regexsoftware.com',
+    password: 'Kasish123',
+    firstName: 'Kasish',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Mumbai',
+    salary: 800000,
+    skills: [ 'DBMS', 'C++', 'Kotlin', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479a'),
+    id: '2',
+    username: 'Shakshi Karamchandani',
+    useremail: 'shakshi.karamchandani@yahoo.com',
+    password: 'shakshi123',
+    firstName: 'shakshi',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 32,
+    city: 'New Delhi',
+    salary: 500000,
+    skills: [ 'Python', 'C++', 'Java', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a6'),
+    id: '13',
+    username: 'Rahul Verma',
+    useremail: 'rahul.verma@yahoo.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'New Delhi',
+    salary: 700000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+
+
+
+Find all documents where the user's role is "customer" and the user has the skills "Java" and "C++".
+db.users.find({skills:{$all:["C++","Java"]}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47ad'),
+    id: '20',
+    username: 'Aryan Mishra',
+    useremail: 'aryan.mishra@gmail.com',
+    password: 'Aryan123',
+    firstName: 'Aryan',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Hyderabad',
+    salary: 450000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479a'),
+    id: '2',
+    username: 'Shakshi Karamchandani',
+    useremail: 'shakshi.karamchandani@yahoo.com',
+    password: 'shakshi123',
+    firstName: 'shakshi',
+    lastName: 'karamchandani',
+    role: 'customer',
+    gender: 'Female',
+    age: 32,
+    city: 'New Delhi',
+    salary: 500000,
+    skills: [ 'Python', 'C++', 'Java', 'Os' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a7'),
+    id: '14',
+    username: 'Sakshi Mishra',
+    useremail: 'sakshi.mishra@yahoo.com',
+    password: 'Sakshi123',
+    firstName: 'Sakshi',
+    lastName: 'Mishra',
+    role: 'customer',
+    gender: 'Female',
+    age: 28,
+    city: 'Assam',
+    salary: 650000,
+    skills: [ 'Java', 'C++', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e479f'),
+    id: '6',
+    username: 'Vikram Patel',
+    useremail: 'vikram.patel@regexsoftware.com',
+    password: 'Vikram123',
+    firstName: 'Vikram',
+    lastName: 'Patel',
+    role: 'customer',
+    gender: 'Male',
+    age: 28,
+    city: 'Assam',
+    salary: 900000,
+    skills: [ 'Java', 'C++', 'SQL', 'React' ]
+  }
+]
+
+
+
+
+
+Retrieve all documents where the user's role is "admin" and the user has at least three skills.
+db.users.find({role:"admin","skills.2":{$exists:true}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e47a9'),
+    id: '16',
+    username: 'Vishal Singh',
+    useremail: 'vishal.singh@regexsoftware.com',
+    password: 'Vishal123',
+    firstName: 'Vishal',
+    lastName: 'Singh',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Jaipur',
+    salary: 750000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a0'),
+    id: '7',
+    username: 'Riya Sharma',
+    useremail: 'riya.sharma@gmail.com',
+    password: 'Riya123',
+    firstName: 'Riya',
+    lastName: 'Sharma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'Python', 'JavaScript', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a6'),
+    id: '13',
+    username: 'Rahul Verma',
+    useremail: 'rahul.verma@yahoo.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'New Delhi',
+    salary: 700000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a3'),
+    id: '10',
+    username: 'Priya Gupta',
+    useremail: 'priya.gupta@regexsoftware.com',
+    password: 'Priya123',
+    firstName: 'Priya',
+    lastName: 'Gupta',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 1800000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ac'),
+    id: '19',
+    username: 'Kritika Verma',
+    useremail: 'kritika.verma@regexsoftware.com',
+    password: 'Kritika123',
+    firstName: 'Kritika',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Kolkata',
+    salary: 2500000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+
+Retrieve all documents where the user's role is "admin" and the user has at least one skill.
+db.users.find({role:"admin","skills.0":{$exists:true}})
+[
+  {
+    _id: ObjectId('668b73277c030f280c0e479d'),
+    id: '4',
+    username: 'Sumanth Rao',
+    useremail: 'sumanth.rao@gmail.com',
+    password: 'Sumanth123',
+    firstName: 'Sumanth',
+    lastName: 'Rao',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Mumbai',
+    salary: 700000,
+    skills: [ 'Java', 'JavaScript' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a9'),
+    id: '16',
+    username: 'Vishal Singh',
+    useremail: 'vishal.singh@regexsoftware.com',
+    password: 'Vishal123',
+    firstName: 'Vishal',
+    lastName: 'Singh',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Jaipur',
+    salary: 750000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a0'),
+    id: '7',
+    username: 'Riya Sharma',
+    useremail: 'riya.sharma@gmail.com',
+    password: 'Riya123',
+    firstName: 'Riya',
+    lastName: 'Sharma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Jaipur',
+    salary: 450000,
+    skills: [ 'Python', 'JavaScript', 'Node.js' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a6'),
+    id: '13',
+    username: 'Rahul Verma',
+    useremail: 'rahul.verma@yahoo.com',
+    password: 'Rahul123',
+    firstName: 'Rahul',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'New Delhi',
+    salary: 700000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47a3'),
+    id: '10',
+    username: 'Priya Gupta',
+    useremail: 'priya.gupta@regexsoftware.com',
+    password: 'Priya123',
+    firstName: 'Priya',
+    lastName: 'Gupta',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Goa',
+    salary: 1800000,
+    skills: [ 'Java', 'Spring', 'Hibernate' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e4799'),
+    id: '1',
+    username: 'Prajjal Dhar',
+    useremail: 'prajjal.dhar@gmail.com',
+    password: 'Regex1234',
+    firstName: 'Prajjal',
+    lastName: 'Dhar',
+    role: 'admin',
+    gender: 'Male',
+    age: 28,
+    city: 'Goa',
+    salary: 300000,
+    skills: [ 'Java', 'Python' ]
+  },
+  {
+    _id: ObjectId('668b73277c030f280c0e47ac'),
+    id: '19',
+    username: 'Kritika Verma',
+    useremail: 'kritika.verma@regexsoftware.com',
+    password: 'Kritika123',
+    firstName: 'Kritika',
+    lastName: 'Verma',
+    role: 'admin',
+    gender: 'Female',
+    age: 28,
+    city: 'Kolkata',
+    salary: 2500000,
+    skills: [ 'Python', 'Django', 'SQL' ]
+  }
+]
+
+
+
+
+
+aggregate functions--
+
+How many users are from New Delhi?
+[
+  {
+    $match: {
+      city:"New Delhi"
+    }
+  },
+  {
+    $count: "total users in New Delhi"
+  }
+]
+
+
+How many Female users are from Jaipur?
+[
+  {
+    $match: {
+      gender:"Female",
+      city:"Jaipur"
+    }
+  },
+  {
+    $count: "total Female users"
+  }
+]
+
+
+
+How many Male users are there in Delhi who have skills Java?
+[
+  {
+    $match: {
+      gender:"Male",
+      city:"New Delhi",
+      skills:"Java"
+    }
+  },
+  {
+    $count: "total no os Male users"
+  }
+]
+
+
+
+How many users are from Hyderabad having age greater than 24 and have skill Python,C++
+[
+  {
+    $match: {
+      age:{"$gt":24},
+      city:"Hyderabad",
+      skills:{"$all":["Python","C++"]}
+    }
+  },
+  {
+    $count: "total no of users"
+  }
+]
+
+
+
+How many female users are from Goa having age greater than 24 and have skill Python,C++
+[
+  {
+    $match: {
+      gender:"Female",
+      city:"Goa",
+      age:{"$gt":24},
+      skills:{"$all":["Python","C++"]}
+    }
+  },
+  {
+    $count: "total no of female users"
+  }
+]
+
+
+
+Find the count of users in each city.
+[
+  {$group: {
+    _id:"$city",
+    noofusers:{$sum:1}
+  }
+  }
+]
+
+
+
+Find all users who have the same last name.
+[
+  {$group: {
+    _id:"$lastName",
+    noofusers:{$sum:1}
+  }
+  }
+]
+
+
+
+Find the average age of users.
+[
+  {
+    $group: {
+      _id:"$role",
+      averageage:{$avg:"$age"}
+    }
+  }
+]
