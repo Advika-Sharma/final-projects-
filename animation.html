@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .box{
+            height:200px;
+            width:200px;
+            border:2px solid black;
+            animation-name: mybox;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            position:absolute;
+            animation-delay: 2s;
+            animation-direction: alternate;
+        }
+        @keyframes mybox {
+
+            from{
+                width:0px;
+                height:0px;
+                background-color: red;
+                border-radius: 0px;
+                left:0px;
+                top:0px;
+            }
+            to{ 
+                width:120px;
+                height:60px;
+                background-color: blue;
+                border-radius: 50%;
+                left:200px;
+                top:150px;
+            }}
+        .box1{
+            height:200px;
+            width:200px;
+            border:2px solid black;
+            animation-name: box1;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            position: relative;
+            animation-delay: 2s;
+            animation-direction: alternate;
+        }
+        @keyframes box1{
+           from{ width:0px;
+                height:0px;
+                background-color: red;
+                border-radius: 0px;
+                left:400px;
+                top:0px;
+            }
+
+                to{
+                    width:120px;
+                height:60px;
+                background-color: blue;
+                border-radius: 50%;
+                left:200px;
+                top:150px;
+                }
+        }
+        .box2{
+            height:200px;
+            width:200px;
+            border:2px solid black;
+            animation-name: box2;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            position: absolute;
+            animation-delay: 2s;
+            animation-direction: alternate;
+        }
+        .box3{
+            height:200px;
+            width:200px;
+            border:2px solid black;
+            animation-name: box3;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            position: absolute;
+            animation-delay: 2s;
+            animation-direction: alternate;
+        }
+        @keyframes box2{
+            from{ width:0px;
+                 height:0px;
+                 background-color: red;
+                 border-radius: 0px;
+                 left:0px;
+                 top:300px;
+             }
+ 
+                 to{
+                     width:120px;
+                 height:60px;
+                 background-color: blue;
+                 border-radius: 50%;
+                 left:200px;
+                 top:150px;
+                 }
+         }
+         @keyframes box3{
+            from{ width:0px;
+                 height:0px;
+                 background-color: red;
+                 border-radius: 0px;
+                 left:400px;
+                 top:300px;
+             }
+ 
+                 to{
+                     width:120px;
+                 height:60px;
+                 background-color: blue;
+                 border-radius: 50%;
+                 left:200px;
+                 top:150px;
+                 }
+         }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>
