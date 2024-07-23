@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .input{
+        margin: auto;
+        padding: 40px;
+        width: 45%;
+        border: 2px solid gray;
+        margin-top: 140px;
+    }
+    input{
+        width: 40%;
+        padding: 10px 8px;
+        background-color:rgb(0, 0, 0);
+         color:white;
+         margin: 3px;
+         border: 1px solid black;
+         border-radius: 5px;
+
+    }
+    button{
+            padding: 10px 20px;
+            width: 98%;
+    }
+</style>
+<body>
+    <div class="input">
+        <input  type="text" class="inp" id="inp1" placeholder="Name">
+        <input type="text" class="inp" id="inp2"placeholder="email">
+        <input type="text" class="inp" id="inp3"placeholder="Age">
+        <input type="text" class="inp" id="inp4"placeholder="Mobile No.">
+        <input type="text" class="inp" id="inp5"placeholder="City">
+        <input type="text" class="inp" id="inp6"placeholder="Pin code">
+
+        <button id="btn" style="background-color: rgb(15, 199, 15); border:none; margin-top:10px; border-radius:5px">Submit</button>
+    </div>
+
+    <script>
+        document.getElementById("btn").onclick = function(){
+            let val = document.getElementsByClassName("inp");
+            //document.getElementsByClassName("inp").value=''
+            //document.getElementsByClassName("inp").focus();
+            //for(let i=0; i<val.length; i++)
+            //{
+            //    console.log(val[i].value)
+            //}}                OR
+
+            console.log(val)
+            for (let i of val)
+                {console.log(i.value)}}
+
+            //document.querySelector("button").onclick= function(){
+            //    console.log("hello java script")
+            //}
+
+            document.querySelector("button").onclick= function(){
+                console.log("hello java script")
+               let a= document.querySelectorAll("input")
+                for (let i of a){
+                    console.log(i.value)
+                }
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .box{
+            height: 400px;
+            justify-content: center;
+            width: 400px;
+            border: 2px solid black;
+            text-align: center;
+            align-items: center;
+            padding: 25px;
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+        button{
+            padding: 8px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body id="bo">
+    <div class="box" id="boxs">
+        <p id="para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio reprehenderit a fuga assumenda. Voluptatibus quisquam repellendus neque saepe. Provident velit enim, animi aliquam vero nostrum earum nobis expedita temporibus iusto. Ipsam praesentium odio ullam magni ducimus nemo cum dignissimos omnis amet ad quibusdam harum sint, porro, officia cupiditate consequatur exercitationem nostrum vduabcynfwmehbfjenfhx blx73hnfx4riwev wbrxufyn3wiea
+        </p><br>
+    
+    <button id="uppercase">uppercase</button>
+    <button id="lowercase">lowercase</button>
+    <button id="inc">+</button>
+    <button id="dec">-</button>
+    <input type="color" id="col">
+    <input type="range" id="ran">
+
+</div>
+</body>
+<script>
+    let counter=16;
+
+    document.getElementById("uppercase").onclick=function(){
+        document.getElementById("para").style.textTransform="uppercase";
+    }
+
+    document.getElementById("lowercase").onclick=function(){
+        document.getElementById("para").style.textTransform="lowercase";
+    }
+
+
+    document.getElementById("inc").onclick=function(){
+        
+        counter++;
+        console.log(counter+"px");
+        document.getElementById("para").style.fontSize=counter+"px";
+    }
+
+    document.getElementById("dec").onclick=function(){
+        
+        document.getElementById("para").style.fontSize=counter+"px";
+        counter--;
+        console.log(counter);
+    }
+
+    document.getElementById("col").oninput=function(){
+        
+        document.getElementById("para").style.backgroundColor=document.getElementById("col").value;
+    }
+
+    document.getElementById("ran").oninput=function(){
+        
+        document.getElementById("para").style.fontSize=counter+"px";
+    }
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color{
+            height: 50px;
+            width: 50px;
+            border: 2px solid black;
+            border-radius: 200px;
+            display: inline-block;
+        }
+        #red{
+            background-color: red;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+        #green{
+            background-color: green;
+        }
+        #black{
+            background-color: black;
+            border: 2px solid grey;
+        }
+    </style>
+</head>
+<body id="bo">
+    <div class="color" id="red"></div>
+    <div class="color" id="yellow"></div>
+    <div class="color" id="green"></div>
+    <div class="color" id="black"></div>
+
+
+    <!-- <button id="btn">Submit</button> -->
+
+<script>
+
+    document.getElementById("red").onclick = function(){
+
+        document.getElementById("bo").style.backgroundColor="red"
+    }
+    document.getElementById("yellow").onclick = function(){
+
+        document.getElementById("bo").style.backgroundColor="yellow"
+    }
+    document.getElementById("green").onclick = function(){
+
+        document.getElementById("bo").style.backgroundColor="green"
+    }
+document.getElementById("black").onclick = function(){
+
+        document.getElementById("bo").style.backgroundColor="black"
+    }
+    
+    
+    // document.getElementById("btn").onclick = function(){
+
+    //     console.log("hello JS on console screen")
+    //     alert("Hey JS this is a alert message")
+    // }
+</script>
+
+</body>
+</html>
