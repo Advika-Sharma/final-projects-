@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .container{
+
+            width: 50%;
+            margin: auto;
+            margin-top: 2rem;
+            box-shadow: 0px 0px 10px rgb(205, 204, 204);
+            padding: 20px;
+        }
+
+        select{
+
+            padding: 10px 50px;
+        }
+
+        p{
+
+            font-family: sans-serif;
+            text-align: justify;
+            line-height: 20px;
+            font-size: 15px;
+            margin: 20px 0px;
+        }
+        .color{
+            height: 50px;
+            width: 50px;
+            border-radius: 200px;
+            display: inline-block;
+            justify-content: center;
+        }
+        #red{
+                background-color: red;
+            }
+            #yellow{
+                background-color: yellow;
+            }
+            #green{
+                background-color: green;
+            }
+            #black{
+                background-color: black;
+            }
+
+            button{
+                padding: 8px;
+                margin: 5px;
+                background-color: green;
+                border: none;
+                margin: 5px;
+                padding: 10px;
+                border-radius: 7px;
+            }
+
+      
+    </style>
+</head>
+<body id="bo">
+    <div style="background-color: white;" class="container">
+        <h1>Select your Domain:</h1><br>
+        <select name="" id="select">
+            <option value="mone">Make a choice</option>
+            <option value="django">Django</option>
+            <option value="aws">Aws</option>
+            <option value="mern">Mern</option>
+        </select>
+
+        <p id="article"></p>
+        
+    <div class="color" id="red"></div>
+    <div class="color" id="yellow"></div>
+    <div class="color" id="green"></div>
+    <div class="color" id="black"></div><br>
+
+
+    <div><button id="upper">upper</button>
+    <button id="lower">lower</button>
+    <button id="inc">+</button>
+    <button id="dec">-</button></div>
+
+    </div>
+
+
+    <script>
+        let counter= 16;
+
+        document.getElementById("red").onclick = function(){
+
+            document.getElementById("bo").style.backgroundColor="red"
+        }
+        document.getElementById("yellow").onclick = function(){
+    
+            document.getElementById("bo").style.backgroundColor="yellow"
+        }
+        document.getElementById("green").onclick = function(){
+    
+            document.getElementById("bo").style.backgroundColor="green"
+        }
+    document.getElementById("black").onclick = function(){
+    
+            document.getElementById("bo").style.backgroundColor="black"
+        }
+
+
+        document.getElementById("select").onclick = function(){
+
+            let domain = document.getElementById("select").value;
+           
+            if(domain=="django"){
+
+                document.getElementById("article").innerText = "Django  sometimes stylized as django)[6] is a free and open-source, Python-based web framework that runs on a web server. It follows the model–template–views (MTV) architectural pattern.[7][8] It is maintained by the Django Software Foundation (DSF), an independent organization established in the US as a 501(c)(3) non-profits primary goal is to ease the creation of complex, database-driven websites. The framework emphasizes reusability and  of components, less code, low coupling, rapid development, and the principle of don t repeat yourself.[9] Python is used throughout, even for settings, files, and data models. Django also provides an optional administrative create, read, update and delete interface that is generated dynamically through introspection and configured via admin models."
+            }
+            else if(domain=="aws"){
+
+                document.getElementById("article").innerText = "AWS services are delivered to customers via a network of AWS server farms located throughout the world. Fees are based on a combination of usage , hardware, operating system, software, and networking features chosen by the subscriber requiring various degrees of availability, redundancy, security, and service options. Subscribers can pay for a single virtual AWS computer, a dedicated physical computer, or clusters of either.[7] Amazon provides select portions of security for subscribers (e.g. physical security of the data centers) while other aspects of security are the responsibility of the subscriber (e.g. account management, vulnerability scanning, patching). AWS operates from many global geographical regions including seven in North America.[8]"
+            }
+            else if(domain=="mern"){
+
+                document.getElementById("article").innerText = "Because all components of the MEAN stack support programs that are written in JavaScript, MEAN applications can be written in one language for both server-side and client-side execution environmentThough often compared directly to other popular web development stacks such as the LAMP stack, the components of the MEAN stack are higher-level including a web application presentation layer and not including an operating system layer.[5The acronym MEAN was coined by Valeri Karpov.[6] He introduced the term in a 2013 blog post and the logo concept, initially created by Austin Anderson for the original MEAN stack LinkedIn group, is an assembly of the first letter of each component of the MEAN acronym.[7]"
+            }
+
+            else{
+               
+                document.getElementById("article").innerText = '';
+
+            }
+        }
+
+        document.getElementById("upper").onclick=function(){
+            document.getElementById("article").style.textTransform="uppercase";
+        }
+    
+        document.getElementById("lower").onclick=function(){
+            document.getElementById("article").style.textTransform="lowercase";
+        }
+    
+    
+        document.getElementById("inc").onclick=function(){
+            
+            counter++;
+            console.log(counter+"px");
+            document.getElementById("article").style.fontSize=counter+"px";
+        }
+    
+        document.getElementById("dec").onclick=function(){
+            
+            document.getElementById("article").style.fontSize=counter+"px";
+            counter--;
+            console.log(counter);
+        }
+
+    </script>
+    
+</body>
+</html>

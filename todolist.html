@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYSn9eqz0M6wJKA9HIEKGb4oKPN3wLjDhBEeE0QMk8yD00CPHpVxiIYxbCo0beJ2W99Cw&usqp=CAU");
+        }
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        margin-left: 20px;
+
+    }
+    .container
+    {
+        width: 800px;
+        background-color: wheat;
+        margin-top: 40px;
+    }
+    button{
+        margin:10px;
+    }
+</style>
+</head>
+<body>
+    <h1>My Todo List:</h1>
+    <div class="container">
+        <input type="text">
+        <button>Submit</button>
+    </div>
+    <script>
+        document.querySelector("button").onclick=function()
+        {
+            let val = document.querySelector("input").value;
+            document.querySelector("input").value='';
+            document.querySelector("input").focus();
+            let h = document.createElement("li");
+            let b=document.createElement("button")
+            let c=document.createElement("button")
+            h.innerHTML=val;
+            c.innerHTML="Complete Button"
+            b.innerHTML="Delete Button"
+            document.querySelector(".container").append(h);
+            document.querySelector(".container").append(c);
+            document.querySelector(".container").append(b);
+            c.onclick = function() {
+                h.style.textDecoration = "line-through";
+            };
+            b.onclick = function() {
+                h.remove();
+                c.remove();
+                b.remove();
+            };
+        };
+    </script>
+</body>
+</html>

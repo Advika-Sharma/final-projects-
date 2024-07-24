@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change Squares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid black;
+            box-shadow: 0px 6px 10px #022f60;
+            padding: 5vh 5vw;
+        }
+
+        .input-section {
+            margin-bottom: 20px;
+        }
+
+        #colorInput {
+            padding: 8px;
+            margin-right: 10px;
+            width: 150px;
+        }
+
+        #boxSelect {
+            padding: 8px;
+            margin-right: 10px;
+        }
+
+        button{
+            padding: 10px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor:pointer;
+        }
+
+        button:hover {
+            background-color: #022f60;
+        }
+
+        .squares {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border: 2px solid #333;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-section">
+            <input type="text" id="colorInput" placeholder="Enter color name">
+            <select id="boxSelect">
+                <option value="1">Box 1</option>
+                <option value="2">Box 2</option>
+                <option value="3">Box 3</option>
+                <option value="4">Box 4</option>
+                <option value="5">Box 5</option>
+                <option value="6">Box 6</option>
+                <option value="7">Box 7</option>
+                <option value="8">Box 8</option>
+            </select>
+            <button onclick="changeColor()">Submit</button>
+        </div>
+        <div class="squares">
+            <div class="row">
+                <div class="square" id="square1"></div>
+                <div class="square" id="square2"></div>
+                <div class="square" id="square3"></div>
+                <div class="square" id="square4"></div>
+            </div>
+            <div class="row">
+                <div class="square" id="square5"></div>
+                <div class="square" id="square6"></div>
+                <div class="square" id="square7"></div>
+                <div class="square" id="square8"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function changeColor() {
+            const color = document.getElementById('colorInput').value;
+            const selectedBox = document.getElementById('boxSelect').value;
+
+            const squareId = 'square' + selectedBox;
+            const square = document.getElementById(squareId);
+
+            if (square) {
+                square.style.backgroundColor = color;
+            }
+        }
+    </script>
+</body>
+</html>

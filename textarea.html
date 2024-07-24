@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .text
+        {height: 200px;
+            width: 600px;
+            border: 2px solid black;
+          } 
+      *:hover{
+        border-color:red;
+      }
+    </style>
+</head>
+<body id="bo">
+    <textarea name="" id="text" rows="10" cols="30"></textarea>
+    <h1>Css Properties</h1>
+    <input type="text" id="color" placeholder="color">
+    <input type="text" id="bgcolor" placeholder="background-color">
+    <input type="number" id="size" placeholder="fontsize"><br><br>
+    <div class="text" id="text1"></div>
+    <h3 id="length">Total Letters: <span id="letterCount">0</span></h3>
+    
+    <script>
+           document.getElementById("text").oninput=function(){
+            let text=document.getElementById("text").value;
+            console.log(text)
+            document.getElementById("text1").innerHTML=`<h1>${text}</h1>`;
+            let totalLetters = text.length;
+            document.getElementById("letterCount").textContent = totalLetters;
+
+        }
+
+        document.getElementById("color").oninput = function() {
+          let color = document.getElementById("color").value;
+          document.getElementById("text1").style.color = color;
+      }
+
+      document.getElementById("bgcolor").oninput = function() {
+          let bgcolor = document.getElementById("bgcolor").value;
+          document.getElementById("text1").style.backgroundColor = bgcolor;
+      }
+
+      document.getElementById("size").oninput = function() {
+          let size = document.getElementById("size").value + "px";
+          document.getElementById("text1").style.fontSize = size;
+      }
+
+    </script>
+</body>
+</html>

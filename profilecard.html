@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: roboto;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: whitesmoke;
+        }
+        .left{
+            box-shadow: 0px 0px 10px grey;
+            width: 35%;
+            padding: 20px;
+            background-color: white;
+            margin: 5px;
+            border-radius: 10px;
+        }
+        .right{
+            box-shadow: 0px 0px 10px grey;
+            width: 35%;
+            padding: 20px;
+            background-color: grey;
+            margin: 5px;
+            border-radius: 10px;
+
+        }
+        input{
+            height: 30px;
+            width: 90%;
+            margin: 20px 5px;
+            padding-left: 5px;
+        }
+        .upper,.lower{
+            text-align:center;
+            height: 50%;
+            /* border: 2px solid black; */
+            padding: 30px;
+            font-size: 20px;
+            line-height: 35px;
+        }
+        
+        img{
+            border-radius:100%;
+            box-shadow: 0px 0px 3px grey;
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+          
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <label for="">Image:</label>
+        <input type="text" placeholder="Enter image link" id="inp1">
+        <label for="">Name:</label>
+        <input type="text" placeholder="Enter your name" id="inp2">
+        <label for="">Email:</label>
+        <input type="email" placeholder="Enter your email" id="inp3">
+        <label for="">Course:</label>
+        <input type="text" placeholder="Enter your course" id="inp4">
+        <label for="">MobileNo</label>
+        <input type="text" placeholder="Enter your MobNo" id="inp5">
+    </div>
+    <div class="right">
+        <div class="upper">
+            <img src="" alt="">
+        </div>
+        <div class="lower">
+           Name: <span id="two"></span><br>
+           Email: <span id="three"></span><br>
+           Course: <span id="four"></span><br>
+           MobileNo: <span id="five"></span><br>
+
+        </div>
+    </div>
+    <script>
+        document.querySelector("#inp1").oninput=function(){
+            let val=document.querySelector("#inp1").value
+            document.querySelector("img").src=val
+        }
+        document.querySelector("#inp2").oninput=function(){
+            let val=document.querySelector("#inp2").value
+            document.querySelector("#two").innerText=val
+        }
+        document.querySelector("#inp3").oninput=function(){
+            let val=document.querySelector("#inp3").value
+            document.querySelector("#three").innerText=val
+        }
+        document.querySelector("#inp4").oninput=function(){
+            let val=document.querySelector("#inp4").value
+            document.querySelector("#four").innerText=val
+        }
+        document.querySelector("#inp5").oninput=function(){
+            let val=document.querySelector("#inp5").value
+            document.querySelector("#five").innerText=val
+        }
+    </script>
+</body>
+</html>
