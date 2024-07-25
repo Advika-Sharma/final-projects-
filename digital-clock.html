@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            color: black;
+        }
+
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMyzKY7Yn3fJkwknBpWBwpMV9VKsWPTHHaMQ&s");
+        }
+        .upper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid black;
+            padding: 20px;
+            border-radius: 200px;
+            box-shadow: 5px 5px 5px 5px black;
+            
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7EIWAwWtYFOu2seMTPWAcWgBqnJWyE9mAfw&s");
+        }
+        #hr,#min,#sec,.i{
+            margin: 20px;
+            font-size: 100px;
+        }
+        </style>
+</head>
+<body>
+  
+        <div class="upper">
+            <div id="hr">00</div>
+            <div class="i">:</div>
+            <div id="min">00</div>
+            <div class="i">:</div>
+            <div id="sec">00</div>
+        </div>
+    <script>
+       setInterval(()=>{ let time=new Date()
+        console.log(time)
+        let s=time.getSeconds()
+        console.log(s)
+   
+            if(s<10){
+        document.querySelector("#sec").innerHTML="0"+s}
+        else{
+        document.querySelector("#sec").innerHTML=s
+
+        }
+       
+        let m=time.getMinutes()
+        console.log(m)
+        if(m<10){
+        document.querySelector("#min").innerHTML="0"+m
+
+        }
+        else{
+        document.querySelector("#min").innerHTML=m
+
+        }
+        let h=time.getHours()
+        console.log(h)
+        if(h<10){
+            document.querySelector("#hr").innerHTML="0"+h
+
+        }
+        else{
+            document.querySelector("#hr").innerHTML=h
+
+        }},1000)
+    </script>
+    
+</body>
+</html>
