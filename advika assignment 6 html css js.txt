@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment on objects in JS</title>
+</head>
+<body>
+    
+    <script>
+
+const complexData = [
+          {
+            id: 1,
+            name: "John Doe",
+            age: 30,
+            address: {
+              street: "123 Main St",
+              city: "Anytown",
+              country: "USA",
+            },
+            orders: [
+              { orderId: "A123", amount: 50.75, status: "completed" },
+              { orderId: "B456", amount: 30.25, status: "pending" },
+            ],
+          },
+          {
+            id: 2,
+            name: "Jane Smith",
+            age: 25,
+            address: {
+              street: "456 Oak St",
+              city: "Othercity",
+              country: "USA",
+            },
+            orders: [
+              { orderId: "C789", amount: 100.5, status: "completed" },
+              { orderId: "D012", amount: 75.2, status: "completed" },
+            ],
+          },
+        ]
+
+        //1 Filter users who are aged 25 or younger.
+        let c = complexData.filter((item)=> item.age <= 26)
+        console.log(c)
+
+          //2 Map the array to get an array of user names.
+          let d = complexData.map((item)=> item.name)
+          console.log(d)
+
+          // 3Filter orders with an amount greater than 50.
+          let e = complexData.map((item)=> item.orders.filter((item)=> item.amount > 50))
+          console.log(e)
+
+          //4 Map the array to get an array of order IDs.
+          let f = complexData.map((item)=> item.orders.map((item)=> item.orderId))
+          console.log(f)
+
+          //5 Filter users who have at least one order with a status of 'pending'.
+          let g = complexData.filter((item)=> item.orders.some((item)=> item.status === 'pending'))
+          console.log(g)
+
+          //6 Map the array to get an array of objects containing user names and their total order amounts.
+          const userTotalOrderAmounts = complexData.map(user => ({
+            name: user.name,
+            totalAmount: user.orders.reduce((total, order) => total + order.amount, 0),
+          }));
+          console.log(userTotalOrderAmounts);          
+
+          //7 Filter orders with an amount between 30 and 70.
+          let i = complexData.map((item)=> item.orders.filter((item)=> item.amount >=30 && item.amount<=70))
+          console.log(i)
+
+          //8 Map the array to get an array of objects containing user names and their completed order IDs.
+          const userCompletedOrderIds = complexData.map(user => ({
+            name: user.name,
+            completedOrderIds: user.orders.filter(order => order.status === "completed").map(order => order.orderId),
+          }));
+          console.log(userCompletedOrderIds);          
+
+          //9 Filter users who live in the 'USA' and have at least one order with an amount greater than 50.
+          let k = complexData.filter((item)=> item.address.country === 'USA' && item.orders.some((item)=> item.amount>50))
+          console.log(k)
+
+          //10 Filter users who live in the 'USA' and have at least one order with an amount greater than 50.
+          let p = complexData.filter((item)=> item.address.country === 'USA' && item.orders.some((item)=> item.amount>50))
+          console.log(p)
+    </script>
+</body>
+</html>
