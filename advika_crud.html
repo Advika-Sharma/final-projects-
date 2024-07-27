@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CRUD in JS</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+     
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select {
+      padding: 10px;
+      margin: 10px 0;
+      width: 300px ;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    #hometown
+    {
+        width: 320px ;
+    }
+    
+    button {
+      padding: 10px 20px;
+      background-color: orange;
+      width: 320px;
+      color: black;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: orange;
+    }
+    table {
+      margin-top: 20px;
+      width: 100%;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ccc;
+    }
+    .actions {
+      display: flex;
+      gap: 5px;
+    }
+    .edit, .delete {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .edit {
+      background-color: #4CAF50; /* Green */
+      color: white;
+      margin: 5px;
+    }
+    .delete {
+      background-color: #f44336; /* Red */
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CRUD in JS</h1>
+    <form id="userForm">
+      <input type="text" id="name" name="name" placeholder="Enter your name" ><br>
+
+      <input type="number" id="age" name="age" placeholder="Enter your age"><br>
+
+      <input type="text" id="phone" name="phone" placeholder="Enter your phone" ><br>
+
+      <input type="email" id="email" name="email" placeholder="Enter your email"><br>
+
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label>
+      <input type="radio" id="other" name="gender" value="other">
+      <label for="other">Other</label><br>
+
+      <select id="hometown" name="hometown">
+        <option value="">Select Hometown</option>
+        <option value="Ajmer">Ajmer</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+      </select><br>
+
+      <button type="submit">Submit</button>
+    </form><br><br>
+
+    <table id="usersTable">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Hometown</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        </tbody>
+    </table>
+  </div>
+
+  <script>
+    const userForm = document.getElementById('userForm');
+    const usersTable = document.getElementById('usersTable').getElementsByTagName('tbody')[0];
+    let users = [];
+
+    // Function to add a new user
+    function addUser(user) {
+      users.push(user);
+      renderUsers();
+    }
+
+    // Function to edit a user
+    function editUser(index, user) {
+    users[index] = user;
+    renderUsers();
+    }
+
+    // Function to render users in the table
+    function renderUsers() {
+      usersTable.innerHTML = '';
+      for (let i = 0; i < users.length; i++) {
+        const user = users[i];
+        const row = usersTable.insertRow();
+        row.insertCell().textContent = i + 1;
+        row.insertCell().textContent = user.name;
+        row.insertCell().textContent = user.age;
+        row.insertCell().textContent = user.phone;
+        row.insertCell().textContent = user.email;
+        row.insertCell().textContent = user.gender;
+        row.insertCell().textContent = user.hometown;
+        const actionsCell = row.insertCell();
+        const editBtn = document.createElement('button');
+        editBtn.classList.add('edit');
+        editBtn.textContent = 'Edit';
+
+        // Handle edit button click event
+editBtn.addEventListener('click', () => {
+  const rowIndex = editBtn.parentNode.parentNode.rowIndex;
+  const user = users[rowIndex - 1]; // subtract 1 because row index starts from 1
+  const nameInput = document.getElementById('name');
+  const ageInput = document.getElementById('age');
+  const phoneInput = document.getElementById('phone');
+  const emailInput = document.getElementById('email');
+  const genderInputs = document.querySelectorAll('input[name="gender"]');
+  const hometownSelect = document.getElementById('hometown');
+
+  // Populate the form fields with the user's data
+  nameInput.value = user.name;
+  ageInput.value = user.age;
+  phoneInput.value = user.phone;
+  emailInput.value = user.email;
+  genderInputs.forEach((input) => {
+    if (input.value === user.gender) {
+      input.checked = true;
+    }
+  });
+  hometownSelect.value = user.hometown;
+
+  // Add an event listener to the form to update the user record
+  userForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const updatedUser = {
+      name: nameInput.value,
+      age: ageInput.value,
+      phone: phoneInput.value,
+      email: emailInput.value,
+      gender: document.querySelector('input[name="gender"]:checked').value,
+      hometown: hometownSelect.value,
+    };
+    editUser(rowIndex - 1, updatedUser);
+    userForm.reset();
+  });
+});
+        const deleteBtn = document.createElement('button');
+        deleteBtn.classList.add('delete');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.addEventListener('click', () => {
+          users.splice(i, 1);
+          renderUsers();
+        });
+        actionsCell.appendChild(editBtn);
+        actionsCell.appendChild(deleteBtn);
+      }
+    }
+
+    // Handle form submission
+    userForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const gender = document.querySelector('input[name="gender"]:checked').value;
+      const hometown = document.getElementById('hometown').value;
+      const user = {
+        name,
+        age,
+        phone,
+        email,
+        gender,
+        hometown
+      };
+      addUser(user);
+      userForm.reset();
+    });
+
+
+
+
+  </script>
+</body>
+</html>
