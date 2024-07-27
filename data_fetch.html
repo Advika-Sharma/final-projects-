@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+
+        }
+        div{
+            width: 200px;
+            box-shadow: 0px 0px 10px rgb(182, 168, 168);
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+        }
+        h2{
+            font-size: 20px;
+        }
+        img{
+            height:200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+         let prom = fetch('https://dummyjson.com/products');
+         prom.then((response)=>{
+                (response.json()).then((data)=>{
+                    for (let i of data.products){
+                        let div = document.createElement('div');
+                        let title = document.createElement('h4');
+                        let price = document.createElement('h2');
+                        let image = document.createElement('img');
+                        let description= document.createElement('p');
+
+                        title.innerHTML="title : "+i.title
+                        price.innerHTML="price : "+i.price
+                        description.innerHTML="description : "+i.description
+                        image.src=i.thumbnail
+
+                        div.append(image)
+                        div.append(title)
+                        div.append(price)
+                        div.append(description)
+
+                        document.body.append(div)
+                        console.log(i)
+
+                    }
+                })
+         })
+    </script>
+</body>
+</html>

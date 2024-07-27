@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        button{
+            padding: 15px;
+            width: 45%;
+            margin: 10px 5px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+
+        }
+
+        .box{
+
+            width: 300px;
+            box-shadow: 0px 0px 10px rgb(218, 212, 212);
+            padding: 10px;
+            margin: 5px;
+            flex-grow: 1;
+            text-align: center;
+            justify-content: center;
+            
+        }
+        img{
+            width: 100%;
+        }
+        .search{
+                width: 1000px;
+                border-radius: 10px;
+                margin: 10px;
+                padding: 10px;
+
+        }
+        input{
+            width: 40%;
+            padding: 13px;
+            border-radius: 10px 0px 0px 10px;
+            justify-content: center;
+            display: inline;
+            margin-left: 300px;
+        }
+        .btn{
+            width: 200px;
+            margin: 0px;
+            position: absolute;
+            border-radius: 0px 10px 10px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search">
+        <input type="text" name="" id="">
+        <button class="btn">Search</button>
+    </div>
+    <script>
+        //async function fetchdata ()
+        //{
+        //     let data = await fetch ('https://dummyjson.com/products');
+        //     let json_data = await data.json()
+        //     console.log(json_data.products)  
+        //}
+        //fetchdata()
+
+        async function Fetchdata()
+        {
+            try{
+                let data = await fetch('https://dummyjson.com/products')
+            let json_data = await data.json()
+
+            let filter_product = json_data.products.filter((item)=>item.price<100)
+            console.log(filter_product)
+            for (let i of json_data.products){
+                
+                let div = document.createElement('div')
+                let img = document.createElement('img')
+                let title = document.createElement('h3')
+                let price = document.createElement('h4')
+                let description = document.createElement('p')
+                let add_cart= document.createElement("button")
+                let buy_now= document.createElement("button")
+
+                title.innerHTML=i.title.slice(0,25);
+                buy_now.innerHTML="buy now"
+                add_cart.innerHTML= "add to cart"
+                price.innerHTML=i.price;
+                description.innerHTML=i.description.slice(0,18);
+                img.src=i.thumbnail;
+                div.className="box";
+                div.append(img,title,price,description,add_cart,buy_now);
+
+                document.body.append(div)
+            }
+            }
+    
+            catch{
+                console.log('error')
+            }
+            
+        }
+        Fetchdata()
+
+
+        //show only the products under price 100
+        let price = document.querySelectorAll('h4')
+        for (let i of price){
+            if (i.innerHTML>100){
+                i.style.display="none"
+                }
+                }
+    
+    </script>
+</body>
+</html>
